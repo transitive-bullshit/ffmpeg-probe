@@ -1,10 +1,10 @@
 # ffmpeg-probe
 
-> Utility for getting common probe info from a media stream with fluent-ffmpeg.
+> Wrapper around [ffprobe](https://www.ffmpeg.org/ffprobe.html) for getting info about media files such as width, height, and duration.
 
 [![NPM](https://img.shields.io/npm/v/ffmpeg-probe.svg)](https://www.npmjs.com/package/ffmpeg-probe) [![Build Status](https://travis-ci.org/transitive-bullshit/ffmpeg-probe.svg?branch=master)](https://travis-ci.org/transitive-bullshit/ffmpeg-probe) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-This is a helpful wrapper around [ffprobe](https://www.ffmpeg.org/ffprobe.html) for getting common media info such as width, height, and duration.
+This is a helpful wrapper around  for getting common media info 
 
 ## Install
 
