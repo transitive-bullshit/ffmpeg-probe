@@ -1,0 +1,24 @@
+{
+  "name": "ffmpeg-probe",
+  "version": "0.0.0",
+  "description": "Utility for getting common probe info from a media stream with fluent-ffmpeg.",
+  "main": "index.js",
+  "repository": "transitive-bullshit/ffmpeg-probe",
+  "author": "Travis Fischer <travis@automagical.ai>",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava -v && standard"
+  },
+  "keywords": [
+    "ffmpeg",
+    "ffprobe",
+    "fluent-ffmpeg"
+  ],
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "standard": "^11.0.0"
+  },
+  "dependencies": {
+    "execa": "^0.10.0"
+  }
+}
