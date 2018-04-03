@@ -16,15 +16,17 @@ yarn add ffmpeg-probe
 
 ```js
 const ffmpeg = require('fluent-ffmpeg')
-const ffmpegProbe = require('ffmpeg-probe')
+const probe = require('ffmpeg-probe')
 
-const info = await ffmpegProbe('input.mp4')
+const info = await probe('input.mp4')
 
-console.log(`size=${info.width}x${info.height}px duration=${info.duration}ms`)
-// => size=640x360 duration=4000ms
-
-console.log(info.streams) // extra ffprobe details
-// => array of ffprobe streams info (verbose)
+// info = {
+//   width: 640,
+//   height: 360,
+//   duration: 4000,
+//   streams: [ ... ],
+//   format: { ... }
+// }
 ```
 
 ## API
