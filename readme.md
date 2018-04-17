@@ -24,6 +24,7 @@ const info = await probe('input.mp4')
 //   width: 640,
 //   height: 360,
 //   duration: 4000,
+//   fps: 25,
 //   streams: [ ... ],
 //   format: { ... }
 // }

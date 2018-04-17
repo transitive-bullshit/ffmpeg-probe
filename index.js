@@ -18,6 +18,9 @@ module.exports = async (input) => {
     probe.duration = Math.round(stream.duration * 1000)
     probe.width = stream.width
     probe.height = stream.height
+
+    const fpsFraction = stream.avg_frame_rate.split('/')
+    probe.fps = fpsFraction[0] / fpsFraction[1]
   } else {
     probe.duration = undefined
     probe.width = undefined

@@ -12,19 +12,22 @@ const fixtures = [
     file: '0.mp4',
     width: 640,
     height: 360,
-    duration: 4000
+    duration: 4000,
+    fps: 25
   },
   {
     file: '1.mp4',
     width: 640,
     height: 360,
-    duration: 4000
+    duration: 4000,
+    fps: 25
   },
   {
     file: '2.mp4',
     width: 640,
     height: 360,
-    duration: 4000
+    duration: 4000,
+    fps: 25
   }
 ]
 
@@ -36,5 +39,6 @@ fixtures.forEach((fixture) => {
     t.deepEqual(probe.width, fixture.width)
     t.deepEqual(probe.height, fixture.height)
     t.deepEqual(probe.duration, fixture.duration)
+    t.deepEqual(probe.fps, fixture.fps)
   })
 })
