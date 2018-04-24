@@ -12,8 +12,9 @@ module.exports = async (input) => {
   ])
 
   const probe = JSON.parse(stdout)
-  if (probe.streams && probe.streams[0]) {
-    const stream = probe.streams[0]
+  if (probe.streams && probe.streams.length) {
+    const stream = probe.streams
+      .find((stream) => stream.codec_type === 'video') || probe.streams[0]
 
     probe.duration = Math.round(stream.duration * 1000)
     probe.width = stream.width
