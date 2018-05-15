@@ -2,12 +2,11 @@
 
 const execa = require('execa')
 
-module.exports = async (input) => {
+module.exports = async (input, options) => {
   const { stdout } = await execa('ffprobe', [
     '-print_format', 'json',
     '-show_error',
-    '-show_format',
-    '-show_streams',
+    ...options,
     input
   ])
 
