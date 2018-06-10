@@ -2,15 +2,18 @@
 
 const execa = require('execa')
 
-module.exports = async (input, options = []) => {
+module.exports = async (input, opts = []) => {
   const { stdout } = await execa('ffprobe', [
     '-print_format', 'json',
     '-show_error',
-    ...options,
+    '-show_format',
+    '-show_streams',
+    ...opts,
     input
   ])
 
   const probe = JSON.parse(stdout)
+
   if (probe.streams && probe.streams.length) {
     const stream = probe.streams
       .find((stream) => stream.codec_type === 'video') || probe.streams[0]
