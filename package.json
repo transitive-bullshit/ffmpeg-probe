@@ -1,6 +1,6 @@
 {
   "name": "ffmpeg-probe",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Wrapper around ffprobe for getting info about media files.",
   "main": "index.js",
   "repository": "transitive-bullshit/ffmpeg-probe",
