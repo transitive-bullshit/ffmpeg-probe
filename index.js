@@ -3,7 +3,7 @@
 const execa = require('execa')
 
 module.exports = async (input, opts = []) => {
-  const { stdout } = await execa('ffprobe', [
+  const { stdout } = await execa(process.env.FFPROBE_PATH || 'ffprobe', [
     '-print_format', 'json',
     '-show_error',
     '-show_format',
