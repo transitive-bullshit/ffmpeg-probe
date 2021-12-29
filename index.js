@@ -31,6 +31,7 @@ module.exports = async (input, opts = []) => {
 
     const fpsFraction = stream.avg_frame_rate.split('/')
     probe.fps = fpsFraction[0] / fpsFraction[1]
+    probe.primaryStream = stream
   } else {
     probe.duration = undefined
     probe.width = undefined
