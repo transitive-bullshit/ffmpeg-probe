@@ -19,8 +19,15 @@ module.exports = async (input, opts = []) => {
       .find((stream) => stream.codec_type === 'video') || probe.streams[0]
 
     probe.duration = Math.round(stream.duration * 1000)
-    probe.width = stream.width
-    probe.height = stream.height
+    probe.rotate = stream.tags && stream.tags.rotate
+      ? parseInt(stream.tags.rotate) : 0
+    if ([90, 270].includes(Math.abs(probe.rotate))) {
+      probe.width = stream.height
+      probe.height = stream.width
+    } else {
+      probe.width = stream.width
+      probe.height = stream.height
+    }
 
     const fpsFraction = stream.avg_frame_rate.split('/')
     probe.fps = fpsFraction[0] / fpsFraction[1]
